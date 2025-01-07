@@ -51,6 +51,6 @@ for(User user: users){
 %>
 
 </table>
-<details>m<blink>5gse5she6s6</blink></details>
+
 </body>
 </html>
