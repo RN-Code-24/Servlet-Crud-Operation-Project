@@ -26,7 +26,7 @@ List<User> users=new UserDao().getAllUserDao();
   <th>EMAIL: </th>
   <th> DOB:</th>
   <th>GENDER: </th>
-  <th colspan="2">ACTION</th>
+  <th colspan="2">ACTION:</th>
  
  </tr>
 <%
@@ -42,7 +42,7 @@ for(User user: users){
 <td><%=user.getDob() %></td>
 <td><%=user.getGender()%></td>
 <td><button ><a style="color:red" href="delete?id=<%=user.getId()%>">DELETE</a></button></td>
-<td><button><a style="color:maroon;" href="edit.jsp?id=<%=user.getId()%>">EDIT</a></button></td>
+<td><button><a style="color:maroon;" href="Edit.jsp?id=<%=user.getId()%>">EDIT</a></button></td>
 
 
 </tr>
@@ -51,6 +51,5 @@ for(User user: users){
 %>
 
 </table>
-
 </body>
 </html>

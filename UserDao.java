@@ -137,6 +137,64 @@ public boolean deleteUserByIdDao(int id) {
 	}
 	
 }
+
+
+        public User getUserByIdDao(int id) {
+        	try {
+				PreparedStatement preparedStatement=connection.prepareStatement("Select * from user where id=?");
+				preparedStatement.setInt(1, id);
+				
+				ResultSet  resultSet=preparedStatement.executeQuery();
+				
+				if(resultSet.next()) {
+					
+					int id1=resultSet.getInt("id");
+					String name=resultSet.getString("name");
+					String email=resultSet.getString("email");
+					String password=resultSet.getString("password");
+					LocalDate dob=resultSet.getDate("dob").toLocalDate();
+					String gender=resultSet.getString("gender");
+					
+					return new User(id,name,email,password,dob,gender);
+				}else {
+					return null;
+				}
+			
+        	} catch (SQLException e) {
+				e.printStackTrace();
+				return null;
+			}
+        	
+        	
+        
+        	
+        }
+        
+        public User updateUserColumnByUserIdDao(User user) {
+			
+        	try {
+				PreparedStatement ps=connection.prepareStatement("update user set name=?,email=?,password=?,dob=?,gender=? where id=?");
+				
+				ps.setInt(6, user.getId());
+				ps.setString(1, user.getName());
+				ps.setString(2,user.getEmail());
+				ps.setString(3, user.getPassword());
+				ps.setObject(4,user.getDob());
+				ps.setString(5,user.getGender());
+				
+				int a=ps.executeUpdate();
+				if(a!=0) {
+					return user;
+				}else {
+					return null;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+				return null;
+			}
+        	
+        	
+        }
 }
 
 

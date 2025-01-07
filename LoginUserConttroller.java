@@ -18,11 +18,11 @@ public class LoginUserConttroller extends GenericServlet {
 		UserDao dao=new UserDao();
 		
 		String email=req.getParameter("useremail");//
-		System.out.println(email);
+	//	System.out.println(email);
 		String password=req.getParameter("userpassword");//
-		System.out.println();
+	//	System.out.println();
 		User user=dao.getUserByEmailDao(email);   
-		System.out.println(user);
+		//System.out.println(user);
 		
 		if(user!=null) {
 			

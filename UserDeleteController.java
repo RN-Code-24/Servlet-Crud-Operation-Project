@@ -18,7 +18,7 @@ public class UserDeleteController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	int id=Integer.parseInt(req.getParameter("id"));
 	
-	System.out.println(id);
+	//System.out.println(id);
 	
 	boolean b=new UserDao().deleteUserByIdDao(id);
 	

@@ -52,7 +52,7 @@ public class InserUserController  implements Servlet{
 		if(user2!=null) {
 			
 			req.setAttribute("msg", "Registation Successful.");
-			printWriter.write("<html><body><h5 style='color:green;'>Registered Successfully.</h5></body></html>");
+			//printWriter.write("<html><body><h5 style='color:green;'>Registered Successfully.</h5></body></html>");
 			
 			RequestDispatcher dispatcher=req.getRequestDispatcher("Login.jsp");
 			dispatcher.include(req, res);
